@@ -20,7 +20,7 @@ consumer.subscribe(['boot.t'])
 consumer.seekToBeginning([])
 
 while (true) {
-    def result = consumer.poll(10000L).each { println "Read message " + it }
+    consumer.poll(10000L).each { println "Read message " + it }
 }
 
 println 'Ending...'
