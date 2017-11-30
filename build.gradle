@@ -1,0 +1,16 @@
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.13'
+    compile 'org.apache.kafka:kafka-clients:1.0.0'
+    compile 'org.apache.commons:commons-lang3:3.7'
+}
+
+task runScript (dependsOn: 'classes', type: JavaExec) {
+    main = 'KafkaClient'
+    classpath = sourceSets.main.runtimeClasspath
+}
